@@ -21,7 +21,7 @@ class Init:
         self.context.check_hostname = False
         self.context.verify_mode = CERT_NONE
         self.content = Request(payload_address)
- self.content.add_header('Host', f'{hostname}') 
+        self.content.add_header('Host', f'{hostname}') 
         self.content.add_header('Accept-Encoding', 'gzip, deflate, br')
         self.content.add_header('Accept-Language', 'en-US;q=0.5,en;q=0.3')
         
