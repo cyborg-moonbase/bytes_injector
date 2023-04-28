@@ -15,7 +15,8 @@ def make_payload(input_bin, output_file):
     with open(input_bin, mode='rb') as f:
         x = f.read()
         byte_array = bytearray(x)
-        encoded_payload = b64encode(byte_array)
+        payload = f"global payload; payload = {byte_array}"
+        encoded_payload = b64encode(payload.encode('utf-8'))
         with open(output_file, mode='w', encoding='utf-8') as g:
             g.write(encoded_payload.decode('utf-8'))
             
